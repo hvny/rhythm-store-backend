@@ -3,6 +3,8 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { ConfigModule } from "@nestjs/config";
 import { AppController } from "./app.controller";
 import { AppService } from "./app.service";
+// import { ReviewModule } from './review/review.module';
+// import { ReviewController } from './review/review.controller';
 
 @Module({
   imports: [

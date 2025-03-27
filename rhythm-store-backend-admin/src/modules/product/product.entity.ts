@@ -1,4 +1,5 @@
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn, OneToMany } from "typeorm";
+import { Review } from "../review/review.entity";
 
 @Entity()
 export class Product {
@@ -14,6 +15,9 @@ export class Product {
   @Column({ default: true })
   isAvailable: boolean;
 
-  @Column()
+  @Column("int", { default: 0 })
   quantity: number;
+
+  @OneToMany(() => Review, (review) => review.product)
+  reviews: Review[];
 }
