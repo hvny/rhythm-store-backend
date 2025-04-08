@@ -23,4 +23,9 @@ export class ProductController {
   async update(@Param("id") id: number, @Body() productData: Partial<Product>): Promise<Product> {
     return await this.productService.update(id, productData);
   }
+
+  @Post()
+  async create(@Body() productData: Partial<Product>): Promise<Product> {
+    return await this.productService.create(productData);
+  }
 }
